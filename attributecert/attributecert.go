@@ -484,6 +484,10 @@ func parseAttributeCertificate(in *attributeCertificate) (*AttributeCertificate,
 		SerialNumber:               in.TBSAttributeCertificate.SerialNumber,
 	}
 
+	fmt.Printf("SignatureAlgorithm: %+v\n", out.SignatureAlgorithm)
+	fmt.Printf("Version: %d\n", out.Version)
+	fmt.Printf("SerialNumber: %v\n", out.SerialNumber)
+
 	var v asn1.RawValue
 	if _, err := asn1.Unmarshal(in.TBSAttributeCertificate.Issuer.IssuerName.Bytes, &v); err != nil {
 		return nil, err
@@ -497,6 +501,8 @@ func parseAttributeCertificate(in *attributeCertificate) (*AttributeCertificate,
 	}
 
 	out.Issuer.FillFromRDNSequence(&issuer)
+	fmt.Printf("Issuer: %+v\n", out.Issuer)
+
 	if _, err := asn1.Unmarshal(in.TBSAttributeCertificate.Holder.BaseCertificateID.Issuer.Bytes, &v); err != nil {
 		return nil, err
 	}
@@ -511,41 +517,65 @@ func parseAttributeCertificate(in *attributeCertificate) (*AttributeCertificate,
 	out.Holder.Issuer.FillFromRDNSequence(&holder)
 	out.Holder.Serial = in.TBSAttributeCertificate.Holder.BaseCertificateID.Serial
 
+	fmt.Printf("Holder.Issuer: %+v\n", out.Holder.Issuer)
+	fmt.Printf("Holder.Serial: %v\n", out.Holder.Serial)
+
 	out.NotBefore = in.TBSAttributeCertificate.Validity.NotBefore
 	out.NotAfter = in.TBSAttributeCertificate.Validity.NotAfter
+	fmt.Printf("NotBefore: %v\nNotAfter: %v\n", out.NotBefore, out.NotAfter)
 
 	for _, attribute := range in.TBSAttributeCertificate.Attributes {
 		switch {
 		case attribute.ID.Equal(oidAttributeUserNotice):
 			if _, err := asn1.Unmarshal(attribute.RawValues[0].FullBytes, &out.UserNotice); err != nil {
-				return nil, err
+				fmt.Printf("Failed to parse UserNotice: %v\n", err)
+				return nil, fmt.Errorf("failed to parse UserNotice: %w", err)
 			}
+			fmt.Printf("UserNotice: %+v\n", out.UserNotice)
+	
 		case attribute.ID.Equal(oid.TCGPlatformSpecification):
 			if _, err := asn1.Unmarshal(attribute.RawValues[0].FullBytes, &out.TCGPlatformSpecification); err != nil {
-				return nil, err
+				fmt.Printf("Failed to parse TCGPlatformSpecification: %v\n", err)
+				return nil, fmt.Errorf("failed to parse TCGPlatformSpecification: %w", err)
 			}
+			fmt.Printf("TCGPlatformSpecification: %+v\n", out.TCGPlatformSpecification)
+	
 		case attribute.ID.Equal(oid.TBBSecurityAssertions):
 			if _, err := asn1.Unmarshal(attribute.RawValues[0].FullBytes, &out.TBBSecurityAssertions); err != nil {
-				return nil, err
+				fmt.Printf("Failed to parse TBBSecurityAssertions: %v\n", err)
+				return nil, fmt.Errorf("failed to parse TBBSecurityAssertions: %w", err)
 			}
+			fmt.Printf("TBBSecurityAssertions: %+v\n", out.TBBSecurityAssertions)
+	
 		case attribute.ID.Equal(oid.TCGCredentialSpecification):
 			var credentialSpecification TCGCredentialSpecification
 			if _, err := asn1.Unmarshal(attribute.RawValues[0].FullBytes, &credentialSpecification); err != nil {
+				fmt.Printf("Failed to parse TCGCredentialSpecification, will try TCGSpecificationVersion: %v\n", err)
 				var credentialSpecification TCGSpecificationVersion
 				if _, err := asn1.Unmarshal(attribute.RawValues[0].FullBytes, &credentialSpecification); err != nil {
-					return nil, err
+					fmt.Printf("Failed to parse TCGSpecificationVersion: %v\n", err)
+					return nil, fmt.Errorf("failed to parse TCGCredentialSpecification or TCGSpecificationVersion: %w", err)
 				}
+				fmt.Printf("TCGSpecificationVersion: %+v\n", credentialSpecification)
+			} else {
+				fmt.Printf("TCGCredentialSpecification: %+v\n", credentialSpecification)
 			}
+	
 		case attribute.ID.Equal(oid.TCGCredentialType):
 			var credentialType TCGCredentialType
 			if _, err := asn1.Unmarshal(attribute.RawValues[0].FullBytes, &credentialType); err != nil {
-				return nil, err
+				fmt.Printf("Failed to parse TCGCredentialType: %v\n", err)
+				return nil, fmt.Errorf("failed to parse TCGCredentialType: %w", err)
 			}
+			fmt.Printf("TCGCredentialType: %+v\n", credentialType)
+	
 		case attribute.ID.Equal(oid.PlatformConfigurationV1):
 			var platformConfiguration PlatformConfigurationV1
 			if _, err := asn1.Unmarshal(attribute.RawValues[0].FullBytes, &platformConfiguration); err != nil {
-				return nil, err
+				fmt.Printf("Failed to parse PlatformConfigurationV1: %v\n", err)
+				return nil, fmt.Errorf("failed to parse PlatformConfigurationV1: %w", err)
 			}
+			fmt.Printf("PlatformConfigurationV1: %+v\n", platformConfiguration)
 			for _, component := range platformConfiguration.ComponentIdentifiers {
 				t := Component{
 					Manufacturer:     component.ComponentManufacturer,
@@ -557,20 +587,27 @@ func parseAttributeCertificate(in *attributeCertificate) (*AttributeCertificate,
 					Addresses:        component.ComponentAddresses,
 				}
 				out.Components = append(out.Components, t)
+				fmt.Printf("Appended Component: %+v\n", t)
 			}
 			out.Properties = platformConfiguration.PlatformProperties
 			out.PropertiesURI = platformConfiguration.PlatformPropertiesURI.UniformResourceIdentifier
+	
 		case attribute.ID.Equal(oid.PlatformConfigurationV2):
 			var platformConfiguration PlatformConfigurationV2
 			if _, err := asn1.Unmarshal(attribute.RawValues[0].FullBytes, &platformConfiguration); err != nil {
+				fmt.Printf("Failed to parse PlatformConfigurationV2, will try workaround: %v\n", err)
 				var workaround PlatformConfigurationV2Workaround
 				if _, err := asn1.Unmarshal(attribute.RawValues[0].FullBytes, &workaround); err != nil {
-					return nil, err
+					fmt.Printf("Failed to parse PlatformConfigurationV2Workaround: %v\n", err)
+					return nil, fmt.Errorf("failed to parse PlatformConfigurationV2 or workaround: %w", err)
 				}
+				fmt.Printf("PlatformConfigurationV2Workaround: %+v\n", workaround)
 				platformConfiguration.ComponentIdentifiers = workaround.ComponentIdentifiers
 				platformConfiguration.ComponentIdentifiersURI = workaround.ComponentIdentifiersURI
 				platformConfiguration.PlatformProperties = append(platformConfiguration.PlatformProperties, workaround.PlatformProperty)
 				platformConfiguration.PlatformPropertiesURI = workaround.PlatformPropertiesURI
+			} else {
+				fmt.Printf("PlatformConfigurationV2: %+v\n", platformConfiguration)
 			}
 			for _, component := range platformConfiguration.ComponentIdentifiers {
 				t := Component{
@@ -583,15 +620,21 @@ func parseAttributeCertificate(in *attributeCertificate) (*AttributeCertificate,
 					Addresses:        component.ComponentAddresses,
 				}
 				out.Components = append(out.Components, t)
+				fmt.Printf("Appended Component: %+v\n", t)
 			}
 			out.Properties = platformConfiguration.PlatformProperties
 			out.PropertiesURI = platformConfiguration.PlatformPropertiesURI.UniformResourceIdentifier
+	
 		case attribute.ID.Equal(oid.PlatformConfigURI):
 			var platformConfigurationURI URIReference
 			if _, err := asn1.Unmarshal(attribute.RawValues[0].FullBytes, &platformConfigurationURI); err != nil {
-				return nil, err
+				fmt.Printf("Failed to parse PlatformConfigURI: %v\n", err)
+				return nil, fmt.Errorf("failed to parse PlatformConfigURI: %w", err)
 			}
+			fmt.Printf("PlatformConfigURI: %+v\n", platformConfigurationURI)
+	
 		default:
+			fmt.Printf("Unknown attribute: %v\n", attribute.ID)
 			return nil, fmt.Errorf("attributecert: unknown attribute %v", attribute.ID)
 		}
 	}
