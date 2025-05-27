@@ -1,0 +1,552 @@
+   0 2456: SEQUENCE {
+   4 2176:   SEQUENCE {
+   8    1:     INTEGER 1
+  11  150:     SEQUENCE {
+  14  147:       [0] {
+  17  138:         SEQUENCE {
+  20  135:           [4] {
+  23  132:             SEQUENCE {
+  26   11:               SET {
+  28    9:                 SEQUENCE {
+  30    3:                   OBJECT IDENTIFIER countryName (2 5 4 6)
+  35    2:                   PrintableString 'US'
+         :                   }
+         :                 }
+  39   11:               SET {
+  41    9:                 SEQUENCE {
+  43    3:                   OBJECT IDENTIFIER stateOrProvinceName (2 5 4 8)
+  48    2:                   UTF8String 'CA'
+         :                   }
+         :                 }
+  52   20:               SET {
+  54   18:                 SEQUENCE {
+  56    3:                   OBJECT IDENTIFIER localityName (2 5 4 7)
+  61   11:                   UTF8String 'Santa Clara'
+         :                   }
+         :                 }
+  74   26:               SET {
+  76   24:                 SEQUENCE {
+  78    3:                   OBJECT IDENTIFIER organizationName (2 5 4 10)
+  83   17:                   UTF8String 'Intel Corporation'
+         :                   }
+         :                 }
+ 102   30:               SET {
+ 104   28:                 SEQUENCE {
+ 106    3:                   OBJECT IDENTIFIER organizationalUnitName (2 5 4 11)
+ 111   21:                   UTF8String 'EK Certificate Issuer'
+         :                   }
+         :                 }
+ 134   22:               SET {
+ 136   20:                 SEQUENCE {
+ 138    3:                   OBJECT IDENTIFIER commonName (2 5 4 3)
+ 143   13:                   UTF8String 'www.intel.com'
+         :                   }
+         :                 }
+         :               }
+         :             }
+         :           }
+ 158    4:         INTEGER 926974836
+         :         }
+         :       }
+ 164  157:     [0] {
+ 167  154:       SEQUENCE {
+ 170  151:         [4] {
+ 173  148:           SEQUENCE {
+ 176   11:             SET {
+ 178    9:               SEQUENCE {
+ 180    3:                 OBJECT IDENTIFIER countryName (2 5 4 6)
+ 185    2:                 PrintableString 'US'
+         :                 }
+         :               }
+ 189   11:             SET {
+ 191    9:               SEQUENCE {
+ 193    3:                 OBJECT IDENTIFIER stateOrProvinceName (2 5 4 8)
+ 198    2:                 UTF8String 'CA'
+         :                 }
+         :               }
+ 202   20:             SET {
+ 204   18:               SEQUENCE {
+ 206    3:                 OBJECT IDENTIFIER localityName (2 5 4 7)
+ 211   11:                 UTF8String 'Santa Clara'
+         :                 }
+         :               }
+ 224   26:             SET {
+ 226   24:               SEQUENCE {
+ 228    3:                 OBJECT IDENTIFIER organizationName (2 5 4 10)
+ 233   17:                 UTF8String 'Intel Corporation'
+         :                 }
+         :               }
+ 252   46:             SET {
+ 254   44:               SEQUENCE {
+ 256    3:                 OBJECT IDENTIFIER organizationalUnitName (2 5 4 11)
+ 261   37:                 UTF8String 'Platform Attribute Certificate Issuer'
+         :                 }
+         :               }
+ 300   22:             SET {
+ 302   20:               SEQUENCE {
+ 304    3:                 OBJECT IDENTIFIER commonName (2 5 4 3)
+ 309   13:                 UTF8String 'www.intel.com'
+         :                 }
+         :               }
+         :             }
+         :           }
+         :         }
+         :       }
+ 324   13:     SEQUENCE {
+ 326    9:       OBJECT IDENTIFIER
+         :         sha256WithRSAEncryption (1 2 840 113549 1 1 11)
+ 337    0:       NULL
+         :       }
+ 339   20:     INTEGER 60 29 67 EA 79 24 FD EE 6C C1 50 B9 1E 83 77 7D 1F 42 79 99
+ 361   34:     SEQUENCE {
+ 363   15:       GeneralizedTime 20/08/2017 21:07:48 GMT
+ 380   15:       GeneralizedTime 20/08/2020 21:07:48 GMT
+         :       }
+ 397 1198:     SEQUENCE {
+ 401   28:       SEQUENCE {
+ 403    5:         OBJECT IDENTIFIER '2 23 133 2 17'
+ 410   19:         SET {
+ 412   17:           SEQUENCE {
+ 414    9:             SEQUENCE {
+ 416    1:               INTEGER 2
+ 419    1:               INTEGER 0
+ 422    1:               INTEGER 43
+         :               }
+ 425    4:             OCTET STRING 00 00 00 01
+         :             }
+         :           }
+         :         }
+ 431   18:       SEQUENCE {
+ 433    5:         OBJECT IDENTIFIER '2 23 133 2 25'
+ 440    9:         SET {
+ 442    7:           SEQUENCE {
+ 444    5:             OBJECT IDENTIFIER '2 23 133 8 2'
+         :             }
+         :           }
+         :         }
+ 451   20:       SEQUENCE {
+ 453    5:         OBJECT IDENTIFIER '2 23 133 2 23'
+ 460   11:         SET {
+ 462    9:           SEQUENCE {
+ 464    1:             INTEGER 1
+ 467    1:             INTEGER 1
+ 470    1:             INTEGER 11
+         :             }
+         :           }
+         :         }
+ 473  199:       SEQUENCE {
+ 476    5:         OBJECT IDENTIFIER '2 23 133 2 19'
+ 483  189:         SET {
+ 486  186:           SEQUENCE {
+ 489    1:             INTEGER 0
+ 492  116:             [0] {
+ 494    3:               IA5String '3.1'
+ 499    1:               ENUMERATED 7
+ 502    1:               ENUMERATED 2
+ 505    1:               BOOLEAN FALSE
+ 508    1:               [0] 01
+ 511    5:               [1] 2A 03 04 05 06
+ 518   45:               [2] {
+ 520   43:                 IA5String
+         :                   'https://www.intel.com/protectionprofile.pdf'
+         :                 }
+ 565    5:               [3] 53 04 05 06 07
+ 572   36:               [4] {
+ 574   34:                 IA5String 'https://www.intel.com/cctarget.pdf'
+         :                 }
+         :               }
+ 610   13:             [1] {
+ 612    5:               IA5String '140-2'
+ 619    1:               ENUMERATED 4
+ 622    1:               BOOLEAN FALSE
+         :               }
+ 625    1:             [2] 03
+ 628    1:             BOOLEAN FALSE
+ 631   42:             IA5String
+         :               'https://www.intel.com/isocertification.pdf'
+         :             }
+         :           }
+         :         }
+ 675  874:       SEQUENCE {
+ 679    7:         OBJECT IDENTIFIER '2 23 133 5 1 7 2'
+ 688  861:         SET {
+ 692  857:           SEQUENCE {
+ 696  727:             [0] {
+ 700  374:               SEQUENCE {
+ 704   14:                 SEQUENCE {
+ 706    6:                   OBJECT IDENTIFIER '2 23 133 18 3 1'
+ 714    4:                   OCTET STRING 00 00 00 0A
+         :                   }
+ 720    7:                 UTF8String 'ABC OEM'
+ 729   12:                 UTF8String 'WR06X7871FTL'
+ 743    9:                 [0] 'A5555-999'
+ 754    3:                 [1] 31 2E 31
+ 759    7:                 [2] 2B 06 01 04 01 82 2C
+ 768    1:                 [3] FF
+ 771   50:                 [4] {
+ 773   23:                   SEQUENCE {
+ 775    5:                     OBJECT IDENTIFIER '2 23 133 17 1'
+ 782   14:                     UTF8String 'AF:3A:94:10:A5'
+         :                     }
+ 798   23:                   SEQUENCE {
+ 800    5:                     OBJECT IDENTIFIER '2 23 133 17 2'
+ 807   14:                     UTF8String 'AF:37:10:D2:A8'
+         :                     }
+         :                   }
+ 823  207:                 [5] {
+ 826   49:                   [0] {
+ 828   13:                     SEQUENCE {
+ 830   11:                       OBJECT IDENTIFIER '1 3 6 1 4 1 22554 1 2 1'
+         :                       }
+ 843   32:                     OCTET STRING
+         :                     60 03 A3 34 32 FD 91 4B 60 03 A3 34 32 FD 91 4B
+         :                     60 03 A3 34 32 FD 91 4B 60 03 A3 34 32 FD 91 4B
+         :                     }
+ 877  153:                   [1] {
+ 880  143:                     SEQUENCE {
+ 883  140:                       [4] {
+ 886  137:                         SEQUENCE {
+ 889   11:                           SET {
+ 891    9:                             SEQUENCE {
+ 893    3:                               OBJECT IDENTIFIER countryName (2 5 4 6)
+ 898    2:                               PrintableString 'US'
+         :                               }
+         :                             }
+ 902   11:                           SET {
+ 904    9:                             SEQUENCE {
+ 906    3:                               OBJECT IDENTIFIER
+         :                                 stateOrProvinceName (2 5 4 8)
+ 911    2:                               UTF8String 'FL'
+         :                               }
+         :                             }
+ 915   23:                           SET {
+ 917   21:                             SEQUENCE {
+ 919    3:                               OBJECT IDENTIFIER
+         :                                 localityName (2 5 4 7)
+ 924   14:                               UTF8String 'Ft. Lauderdale'
+         :                               }
+         :                             }
+ 940   24:                           SET {
+ 942   22:                             SEQUENCE {
+ 944    3:                               OBJECT IDENTIFIER
+         :                                 organizationName (2 5 4 10)
+ 949   15:                               UTF8String 'ABC Corporation'
+         :                               }
+         :                             }
+ 966   36:                           SET {
+ 968   34:                             SEQUENCE {
+ 970    3:                               OBJECT IDENTIFIER
+         :                                 organizationalUnitName (2 5 4 11)
+ 975   27:                               UTF8String 'Platform Certificate Issuer'
+         :                               }
+         :                             }
+1004   20:                           SET {
+1006   18:                             SEQUENCE {
+1008    3:                               OBJECT IDENTIFIER commonName (2 5 4 3)
+1013   11:                               UTF8String 'www.abc.com'
+         :                               }
+         :                             }
+         :                           }
+         :                         }
+         :                       }
+1026    5:                     INTEGER 0A 35 4C CD DB
+         :                     }
+         :                   }
+1033   43:                 [6] {
+1035   41:                   IA5String
+         :                   'https://www.abc.com/certs/43843898843.cer'
+         :                   }
+         :                 }
+1078  345:               SEQUENCE {
+1082   14:                 SEQUENCE {
+1084    6:                   OBJECT IDENTIFIER '2 23 133 18 3 1'
+1092    4:                   OCTET STRING 00 00 00 2F
+         :                   }
+1098    7:                 UTF8String 'XYZ OEM'
+1107   14:                 UTF8String 'LMBT3904DW1T1G'
+1123    9:                 [0] 'C5555-555'
+1134    3:                 [1] 33 2E 31
+1139    7:                 [2] 2B 06 01 04 01 82 2C
+1148    1:                 [3] 00
+1151   50:                 [4] {
+1153   23:                   SEQUENCE {
+1155    5:                     OBJECT IDENTIFIER '2 23 133 17 1'
+1162   14:                     UTF8String '82:89:FA:D3:61'
+         :                     }
+1178   23:                   SEQUENCE {
+1180    5:                     OBJECT IDENTIFIER '2 23 133 17 2'
+1187   14:                     UTF8String 'D4:83:B4:F2:78'
+         :                     }
+         :                   }
+1203  181:                 [5] {
+1206   37:                   [0] {
+1208   13:                     SEQUENCE {
+1210   11:                       OBJECT IDENTIFIER '1 3 6 1 4 1 22554 1 2 1'
+         :                       }
+1223   20:                     OCTET STRING
+         :                     34 32 E1 41 4B 60 97 34 34 32 34 32 E1 41 4B 60
+         :                     97 34 34 32
+         :                     }
+1245  139:                   [1] {
+1248  131:                     SEQUENCE {
+1251  128:                       [4] {
+1254  126:                         SEQUENCE {
+1256   11:                           SET {
+1258    9:                             SEQUENCE {
+1260    3:                               OBJECT IDENTIFIER countryName (2 5 4 6)
+1265    2:                               PrintableString 'US'
+         :                               }
+         :                             }
+1269   11:                           SET {
+1271    9:                             SEQUENCE {
+1273    3:                               OBJECT IDENTIFIER
+         :                                 stateOrProvinceName (2 5 4 8)
+1278    2:                               UTF8String 'AZ'
+         :                               }
+         :                             }
+1282   16:                           SET {
+1284   14:                             SEQUENCE {
+1286    3:                               OBJECT IDENTIFIER
+         :                                 localityName (2 5 4 7)
+1291    7:                               UTF8String 'Phoenix'
+         :                               }
+         :                             }
+1300   20:                           SET {
+1302   18:                             SEQUENCE {
+1304    3:                               OBJECT IDENTIFIER
+         :                                 organizationName (2 5 4 10)
+1309   11:                               UTF8String 'XYC Company'
+         :                               }
+         :                             }
+1322   36:                           SET {
+1324   34:                             SEQUENCE {
+1326    3:                               OBJECT IDENTIFIER
+         :                                 organizationalUnitName (2 5 4 11)
+1331   27:                               UTF8String 'Platform Certificate Issuer'
+         :                               }
+         :                             }
+1360   20:                           SET {
+1362   18:                             SEQUENCE {
+1364    3:                               OBJECT IDENTIFIER commonName (2 5 4 3)
+1369   11:                               UTF8String 'www.xyz.com'
+         :                               }
+         :                             }
+         :                           }
+         :                         }
+         :                       }
+1382    3:                     INTEGER 938928
+         :                     }
+         :                   }
+1387   38:                 [6] {
+1389   36:                   IA5String 'https://www.xyz.com/certs/938928.cer'
+         :                   }
+         :                 }
+         :               }
+1427   47:             [1] {
+1429   45:               IA5String
+         :                 'https://www.intel.com/platformidentifiers.xml'
+         :               }
+1476   27:             [2] {
+1478   12:               SEQUENCE {
+1480    4:                 UTF8String 'vPro'
+1486    4:                 UTF8String 'true'
+         :                 }
+1492   11:               SEQUENCE {
+1494    3:                 UTF8String 'AMT'
+1499    4:                 UTF8String 'true'
+         :                 }
+         :               }
+1505   46:             [3] {
+1507   44:               IA5String
+         :                 'https://www.intel.com/platformproperties.xml'
+         :               }
+         :             }
+         :           }
+         :         }
+1553   44:       SEQUENCE {
+1555    6:         OBJECT IDENTIFIER '2 23 133 5 1 3'
+1563   34:         SET {
+1565   32:           SEQUENCE {
+1567   30:             IA5String 'https://www.intel.com/PCRs.xml'
+         :             }
+         :           }
+         :         }
+         :       }
+1599  581:     SEQUENCE {
+1603  124:       SEQUENCE {
+1605    3:         OBJECT IDENTIFIER certificatePolicies (2 5 29 32)
+1610  117:         OCTET STRING, encapsulates {
+1612  115:           SEQUENCE {
+1614  113:             SEQUENCE {
+1616   10:               OBJECT IDENTIFIER '1 2 840 113741 1 5 2 4'
+1628   99:               SEQUENCE {
+1630   49:                 SEQUENCE {
+1632    8:                   OBJECT IDENTIFIER cps (1 3 6 1 5 5 7 2 1)
+1642   37:                   IA5String 'https://www.intel.com/platcertcps.pdf'
+         :                   }
+1681   46:                 SEQUENCE {
+1683    8:                   OBJECT IDENTIFIER unotice (1 3 6 1 5 5 7 2 2)
+1693   34:                   SEQUENCE {
+1695   32:                     UTF8String 'TCG Trusted Platform Endorsement'
+         :                     }
+         :                   }
+         :                 }
+         :               }
+         :             }
+         :           }
+         :         }
+1729  126:       SEQUENCE {
+1731    3:         OBJECT IDENTIFIER subjectAltName (2 5 29 17)
+1736  119:         OCTET STRING, encapsulates {
+1738  117:           SEQUENCE {
+1740  115:             [4] {
+1742  113:               SEQUENCE {
+1744   17:                 SET {
+1746   15:                   SEQUENCE {
+1748    6:                     OBJECT IDENTIFIER '2 23 133 5 1 1'
+1756    5:                     UTF8String 'Intel'
+         :                     }
+         :                   }
+1763   21:                 SET {
+1765   19:                   SEQUENCE {
+1767    6:                     OBJECT IDENTIFIER '2 23 133 5 1 2'
+1775    9:                     SEQUENCE {
+1777    7:                       OBJECT IDENTIFIER '1 3 6 1 4 1 343'
+         :                       }
+         :                     }
+         :                   }
+1786   19:                 SET {
+1788   17:                   SEQUENCE {
+1790    6:                     OBJECT IDENTIFIER '2 23 133 5 1 4'
+1798    7:                     UTF8String 'S2600KP'
+         :                     }
+         :                   }
+1807   22:                 SET {
+1809   20:                   SEQUENCE {
+1811    6:                     OBJECT IDENTIFIER '2 23 133 5 1 5'
+1819   10:                     UTF8String 'H76962-350'
+         :                     }
+         :                   }
+1831   24:                 SET {
+1833   22:                   SEQUENCE {
+1835    6:                     OBJECT IDENTIFIER '2 23 133 5 1 6'
+1843   12:                     UTF8String 'BQKP99940643'
+         :                     }
+         :                   }
+         :                 }
+         :               }
+         :             }
+         :           }
+         :         }
+1857  178:       SEQUENCE {
+1860    3:         OBJECT IDENTIFIER targetInformation (2 5 29 55)
+1865    1:         BOOLEAN TRUE
+1868  167:         OCTET STRING, encapsulates {
+1871  164:           SEQUENCE {
+1874  161:             SEQUENCE {
+1877  158:               [0] {
+1880  155:                 [4] {
+1883  152:                   SEQUENCE {
+1886   11:                     SET {
+1888    9:                       SEQUENCE {
+1890    3:                         OBJECT IDENTIFIER countryName (2 5 4 6)
+1895    2:                         PrintableString 'US'
+         :                         }
+         :                       }
+1899   11:                     SET {
+1901    9:                       SEQUENCE {
+1903    3:                         OBJECT IDENTIFIER
+         :                           stateOrProvinceName (2 5 4 8)
+1908    2:                         UTF8String 'CA'
+         :                         }
+         :                       }
+1912   20:                     SET {
+1914   18:                       SEQUENCE {
+1916    3:                         OBJECT IDENTIFIER localityName (2 5 4 7)
+1921   11:                         UTF8String 'Santa Clara'
+         :                         }
+         :                       }
+1934   26:                     SET {
+1936   24:                       SEQUENCE {
+1938    3:                         OBJECT IDENTIFIER organizationName (2 5 4 10)
+1943   17:                         UTF8String 'Intel Corporation'
+         :                         }
+         :                       }
+1962   30:                     SET {
+1964   28:                       SEQUENCE {
+1966    3:                         OBJECT IDENTIFIER
+         :                           organizationalUnitName (2 5 4 11)
+1971   21:                         UTF8String 'EK Certificate Issuer'
+         :                         }
+         :                       }
+1994   22:                     SET {
+1996   20:                       SEQUENCE {
+1998    3:                         OBJECT IDENTIFIER commonName (2 5 4 3)
+2003   13:                         UTF8String 'www.intel.com'
+         :                         }
+         :                       }
+2018   18:                     SET {
+2020   16:                       SEQUENCE {
+2022    3:                         OBJECT IDENTIFIER serialNumber (2 5 4 5)
+2027    9:                         PrintableString '128943787'
+         :                         }
+         :                       }
+         :                     }
+         :                   }
+         :                 }
+         :               }
+         :             }
+         :           }
+         :         }
+2038   31:       SEQUENCE {
+2040    3:         OBJECT IDENTIFIER authorityKeyIdentifier (2 5 29 35)
+2045   24:         OCTET STRING, encapsulates {
+2047   22:           SEQUENCE {
+2049   20:             [0]
+         :               D4 69 90 26 02 81 D5 5E 83 4B 03 97 6E AB 8A 9F
+         :               8F 84 C9 83
+         :             }
+         :           }
+         :         }
+2071   54:       SEQUENCE {
+2073    8:         OBJECT IDENTIFIER authorityInfoAccess (1 3 6 1 5 5 7 1 1)
+2083   42:         OCTET STRING, encapsulates {
+2085   40:           SEQUENCE {
+2087   38:             SEQUENCE {
+2089    8:               OBJECT IDENTIFIER ocsp (1 3 6 1 5 5 7 48 1)
+2099   26:               [6] 'https://www.intel.com/ocsp'
+         :               }
+         :             }
+         :           }
+         :         }
+2127   55:       SEQUENCE {
+2129    3:         OBJECT IDENTIFIER cRLDistributionPoints (2 5 29 31)
+2134   48:         OCTET STRING, encapsulates {
+2136   46:           SEQUENCE {
+2138   44:             SEQUENCE {
+2140   42:               [0] {
+2142   40:                 [0] {
+2144   38:                   [6] 'https://www.intel.com/platformcert.crl'
+         :                   }
+         :                 }
+         :               }
+         :             }
+         :           }
+         :         }
+         :       }
+         :     }
+2184   13:   SEQUENCE {
+2186    9:     OBJECT IDENTIFIER sha256WithRSAEncryption (1 2 840 113549 1 1 11)
+2197    0:     NULL
+         :     }
+2199  257:   BIT STRING
+         :     AA EB 0F D2 FD CB 81 F2 65 23 22 55 65 8B 62 4F
+         :     7E 46 D2 FA FD 93 98 17 F4 B0 85 0F 74 F7 D4 FD
+         :     A1 F5 E8 D3 DC B5 AB DF 88 4B E9 3E 5D 6E 58 6B
+         :     72 EF FA 18 F2 C0 2A E4 28 44 53 7F CA 6C 8D 33
+         :     69 8E D7 D1 88 E9 72 9E 58 7D 8A 99 64 5A A0 AC
+         :     39 B2 7B EA 39 4F 9F AC 02 72 4E 8C DA C7 74 81
+         :     14 1B 26 07 1B 8E C8 B2 88 26 26 3E E2 D6 54 5C
+         :     17 B2 55 08 94 D4 38 64 29 5A A5 4C 28 5D FF 55
+         :             [ Another 128 bytes skipped ]
+         :   }

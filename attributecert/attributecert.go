@@ -517,8 +517,8 @@ func parseAttributeCertificate(in *attributeCertificate) (*AttributeCertificate,
 	out.Holder.Issuer.FillFromRDNSequence(&holder)
 	out.Holder.Serial = in.TBSAttributeCertificate.Holder.BaseCertificateID.Serial
 
-	fmt.Printf("Holder.Issuer: %+v\n", out.Holder.Issuer)
-	fmt.Printf("Holder.Serial: %v\n", out.Holder.Serial)
+    fmt.Printf("Holder.Issuer: %+v\n", out.Holder.Issuer)
+    fmt.Printf("Holder.Serial: %v\n", out.Holder.Serial)
 
 	out.NotBefore = in.TBSAttributeCertificate.Validity.NotBefore
 	out.NotAfter = in.TBSAttributeCertificate.Validity.NotAfter
